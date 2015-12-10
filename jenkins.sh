@@ -22,6 +22,8 @@ copy_reference_file() {
 	fi; 
 }
 export -f copy_reference_file
+echo "--- User: $(whoami)"
+ls -la /var/jenkins_home
 echo "--- Copying files at $(date)" >> $COPY_REFERENCE_FILE_LOG
 find /usr/share/jenkins/ref/ -type f -exec bash -c "copy_reference_file '{}'" \;
 
