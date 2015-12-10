@@ -25,6 +25,7 @@ export -f copy_reference_file
 echo "--- User: $(whoami)"
 echo "--- JENKINS_HOME: $JENKINS_HOME"
 echo "--- COPY_REFERENCE_FILE_LOG: $COPY_REFERENCE_FILE_LOG"
+echo "--- Id: $(id)"
 
 echo "--- Contents of jenkins_home (direct):"
 ls -la /var/jenkins_home
