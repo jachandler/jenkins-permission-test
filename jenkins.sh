@@ -24,11 +24,11 @@ copy_reference_file() {
 export -f copy_reference_file
 echo "--- User: $(whoami)"
 echo "--- JENKINS_HOME: $JENKINS_HOME"
-users
-groups
+echo "--- COPY_REFERENCE_FILE_LOG: $COPY_REFERENCE_FILE_LOG"
 
+echo "--- Contents of jenkins_home (direct):"
 ls -la /var/jenkins_home
-ls -la /var/jenkins_data
+echo "--- Contents of jenkins_home (JENKINS_HOME env var):"
 ls -la $JENKINS_HOME
 
 echo "--- Copying files at $(date)" >> $COPY_REFERENCE_FILE_LOG
