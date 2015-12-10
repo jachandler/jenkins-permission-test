@@ -22,15 +22,6 @@ copy_reference_file() {
 	fi; 
 }
 export -f copy_reference_file
-echo "--- User: $(whoami)"
-echo "--- JENKINS_HOME: $JENKINS_HOME"
-echo "--- COPY_REFERENCE_FILE_LOG: $COPY_REFERENCE_FILE_LOG"
-echo "--- Id: $(id)"
-
-echo "--- Contents of jenkins_home (direct):"
-ls -la /var/jenkins_home
-echo "--- Contents of jenkins_home (JENKINS_HOME env var):"
-ls -la $JENKINS_HOME
 
 echo "--- Copying files at $(date)" >> $COPY_REFERENCE_FILE_LOG
 find /usr/share/jenkins/ref/ -type f -exec bash -c "copy_reference_file '{}'" \;
